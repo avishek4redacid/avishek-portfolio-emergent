@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-12-18T05:14:18.639501",
+  "total_tests": 6,
+  "passed_tests": 6,
+  "overall_success": true,
+  "results": [
+    {
+      "test": "API Health Check",
+      "success": true,
+      "details": "API is responding correctly",
+      "timestamp": "2025-12-18T05:14:18.355596"
+    },
+    {
+      "test": "Valid Contact Submission",
+      "success": true,
+      "details": "ID: 99969fa4-89ad-4aa1-85a9-6f3d67de0037, Message: Thank you for reaching out. I'll get back to you soon!",
+      "timestamp": "2025-12-18T05:14:18.432699"
+    },
+    {
+      "test": "Invalid Email Format",
+      "success": true,
+      "details": "Correctly rejected invalid email with 422 status",
+      "timestamp": "2025-12-18T05:14:18.478731"
+    },
+    {
+      "test": "Missing Required Fields",
+      "success": true,
+      "details": "Correctly rejected missing fields with 422 status",
+      "timestamp": "2025-12-18T05:14:18.534142"
+    },
+    {
+      "test": "Retrieve All Submissions",
+      "success": true,
+      "details": "Retrieved 2 submissions successfully",
+      "timestamp": "2025-12-18T05:14:18.581878"
+    },
+    {
+      "test": "Filter Submissions by Status",
+      "success": true,
+      "details": "Retrieved 2 submissions with status='new'",
+      "timestamp": "2025-12-18T05:14:18.636944"
+    }
+  ]
+}
