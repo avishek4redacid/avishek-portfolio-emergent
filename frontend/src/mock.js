@@ -9,7 +9,7 @@ export const personalInfo = {
   github: "https://github.com/avishek4redacid",
   linkedin: "https://linkedin.com/in/avishek4redacid",
   location: "India",
-  resumeUrl: "https://drive.google.com/file/d/1ff9G0hnqh0zPSjODQ2zm348szZAw8Jwv/view"
+  resumeUrl: "https://drive.google.com/file/d/1pbpGiYdkrDC-KV0g8ajoFddUs_Lp6Bu6/view"
 };
 
 export const techStack = {
