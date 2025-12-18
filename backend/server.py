@@ -86,6 +86,58 @@ async def get_status_checks():
     
     return status_checks
 
+# Contact Form Endpoints
+@api_router.post("/contact", response_model=ContactSubmissionResponse)
+async def submit_contact_form(submission: ContactSubmissionCreate):
+    """
+    Handle contact form submissions from the portfolio website
+    """
+    try:
+        # Create contact submission object
+        contact_obj = ContactSubmission(**submission.model_dump())
+        
+        # Convert to dict and serialize datetime to ISO string for MongoDB
+        doc = contact_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        
+        # Store in MongoDB
+        await db.contact_submissions.insert_one(doc)
+        
+        logger.info(f"Contact form submitted by {submission.name} ({submission.email})")
+        
+        return ContactSubmissionResponse(
+            success=True,
+            message="Thank you for reaching out. I'll get back to you soon!",
+            id=contact_obj.id
+        )
+    except Exception as e:
+        logger.error(f"Error submitting contact form: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to submit contact form")
+
+@api_router.get("/contact/submissions", response_model=List[ContactSubmission])
+async def get_contact_submissions(status: Optional[str] = None):
+    """
+    Get all contact submissions (for admin view)
+    Optionally filter by status
+    """
+    try:
+        query = {}
+        if status:
+            query["status"] = status
+        
+        # Exclude MongoDB's _id field from the query results
+        submissions = await db.contact_submissions.find(query, {"_id": 0}).sort("timestamp", -1).to_list(1000)
+        
+        # Convert ISO string timestamps back to datetime objects
+        for sub in submissions:
+            if isinstance(sub['timestamp'], str):
+                sub['timestamp'] = datetime.fromisoformat(sub['timestamp'])
+        
+        return submissions
+    except Exception as e:
+        logger.error(f"Error fetching contact submissions: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch contact submissions")
+
 # Include the router in the main app
 app.include_router(api_router)
 
