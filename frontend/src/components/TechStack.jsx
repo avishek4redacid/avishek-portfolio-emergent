@@ -44,9 +44,9 @@ const TechStack = () => {
                         </div>
                         <div className="text-center">
                           <div className="text-white font-semibold text-sm mb-1">{tech.name}</div>
-                          <Badge variant="secondary" className="bg-yellow-400/10 text-yellow-400 border-0 text-xs">
+                          {/* <Badge variant="secondary" className="bg-yellow-400/10 text-yellow-400 border-0 text-xs">
                             {tech.proficiency}%
-                          </Badge>
+                          </Badge> */}
                         </div>
                       </div>
                     </div>
@@ -58,7 +58,7 @@ const TechStack = () => {
         </div>
 
         {/* Additional Skills */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold text-white mb-6">Also Experienced With</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {['Microservices', 'CI/CD', 'Agile/Scrum', 'Unit Testing', 'WebSocket', 'Payment Gateways', 'OAuth', 'JWT', 'API Design', 'Cloud Services'].map(
@@ -73,7 +73,7 @@ const TechStack = () => {
               )
             )}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

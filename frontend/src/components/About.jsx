@@ -28,7 +28,7 @@ const About = () => {
               {personalInfo.bio}
             </p>
             <p className="text-gray-400 leading-relaxed">
-              Throughout my career, I've had the privilege of working with leading companies like <span className="text-yellow-400 font-semibold">Reliance (Jio World Drive)</span> and innovative startups, where I've contributed to building products that serve millions of users.
+              Throughout my career, I've had the privilege of working with leading companies like <span className="text-yellow-400 font-semibold">Reliance (Jio World Drive)</span> and innovative startups like <span className="text-yellow-400 font-semibold">BestWe</span>, where I've contributed to building products that serve millions of users.
             </p>
             <p className="text-gray-400 leading-relaxed">
               I'm passionate about writing clean, maintainable code and staying up-to-date with the latest technologies and best practices in web development.

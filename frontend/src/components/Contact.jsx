@@ -61,7 +61,7 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      value: 'avishek4redacidUser',
+      value: 'avishek4redacid',
       link: personalInfo.github
     },
     {

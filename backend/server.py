@@ -146,6 +146,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",   # your frontend
         "http://127.0.0.1:3000",
+        "https://avishek-portfolio-emergent.onrender.com/contact",
     ],
     allow_credentials=True,
     allow_methods=["*"],
