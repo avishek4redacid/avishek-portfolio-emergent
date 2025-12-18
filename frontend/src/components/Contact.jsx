@@ -30,7 +30,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/contact`, formData);
+      const response = await axios.post(`${BACKEND_URL}/contact`, formData);
       
       if (response.data.success) {
         toast({
